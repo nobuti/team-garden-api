@@ -13,7 +13,7 @@ rc:
 	docker exec -it api-container bash -c "cd */ && rails c"
 
 up:
-	docker-compose up
+	docker-compose build
 
 stop:
 	docker-compose stop

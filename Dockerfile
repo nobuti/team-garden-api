@@ -1,6 +1,6 @@
 FROM ruby:3.0.2-alpine3.13
 
-RUN apk add --no-cache bash tzdata
+RUN apk add --no-cache bash tzdata vim
 RUN apk add --update \
   build-base \
   git \
