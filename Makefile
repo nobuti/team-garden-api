@@ -7,10 +7,10 @@ run:
 	docker-compose run --service-ports --name api-container --rm app
 
 rs:
-	docker exec -it api-container bash -c "cd */ && rails s"
+	docker exec -it api-container bash -c "rails s"
 
 rc:
-	docker exec -it api-container bash -c "cd */ && rails c"
+	docker exec -it api-container bash -c "rails c"
 
 up:
 	docker-compose build

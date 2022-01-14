@@ -1,6 +1,9 @@
-class TodosController < ApplicationController
+class TodosController < SecuredController
+  skip_before_action :authorize_request, only: [:index]
+
   def index
     todos = Todo.order("created_at DESC")
+    puts "#{Rails.application.credentials.auth0}"
     render json: todos
   end
 
