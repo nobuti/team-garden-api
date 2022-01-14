@@ -3,7 +3,6 @@ class TodosController < SecuredController
 
   def index
     todos = Todo.order("created_at DESC")
-    puts "#{Rails.application.credentials.auth0}"
     render json: todos
   end
 
