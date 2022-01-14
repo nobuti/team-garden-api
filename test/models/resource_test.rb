@@ -11,9 +11,9 @@ class ResourceTest < ActiveSupport::TestCase
     assert_not resource.valid?
   end
 
-  test 'invalid resource by missing required description' do
+  test 'valid resource if missing required description' do
     resource = Resource.new(title: 'Wadus', url: 'http://wadus.io', category: 'other')
-    assert_not resource.valid?
+    assert resource.valid?
   end
 
   test 'invalid resource by non compliance url' do
