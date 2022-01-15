@@ -3,9 +3,8 @@ Rails.application.routes.draw do
     resources :todos
     resources :resources
     resources :users, only: :create
-    resource :bookmarks, only: [:create, :delete]
     resources :users, only: [] do
-      resources :bookmarks, only: :index, shallow: true
+      resources :bookmarks, only: [:index, :create, :destroy]
     end
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
