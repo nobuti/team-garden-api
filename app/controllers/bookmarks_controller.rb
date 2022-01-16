@@ -11,15 +11,15 @@ class BookmarksController < SecuredController
   end
 
   def destroy
-    bookmark = Bookmark.find(params[:id])
+    bookmark = Bookmark.find_by(resource_id: params[:id])
     bookmark.destroy
-    head :no_content, status: :ok
+    render json: bookmark
   rescue ActiveRecord::RecordNotFound
     head :not_found
   end
 
   private
     def bookmark_param
-      params.require(:bookmark).permit(:user_id, :resource_id)
+      params.permit(:user_id, :resource_id)
     end
 end
