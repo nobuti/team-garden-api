@@ -1,24 +1,21 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This application uses docker to provision the environment. To get the application up and running:
 
-Things you may want to cover:
+```
+$ make run
+```
 
-* Ruby version
+Once within the container, manage the Rails application as usual:
 
-* System dependencies
+```
+/usr/src/app # bundle install
+/usr/src/app # bin/rails db:setup
+/usr/src/app # bin/rails s -b 0.0.0.0
+```
 
-* Configuration
+# Features
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. Rails 6 api mode
+2. SQLite database
+3. Auth0 as authentication provider
